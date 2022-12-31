@@ -88,6 +88,14 @@ async function atm() {
             type: 'number',
             name: 'benfAccNo',
             message: 'Please enter benificiary account number',
+            validate(value) {
+                if (Number(value)) {
+                    return true;
+                }
+                else {
+                    return 'please enter a valid account number';
+                }
+            },
             when(answers) {
                 // console.clear()
                 return answers.transferType;

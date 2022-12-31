@@ -2,10 +2,11 @@
   "dependencies": {
     "inquirer": "^9.1.4"
   },
-  "name": "atm",
+  "name": "myatm",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
+  "bin": "index.js",
   "devDependencies": {
     "@types/inquirer": "^9.0.3",
     "@types/node": "^18.11.18"

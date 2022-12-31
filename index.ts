@@ -103,6 +103,13 @@ async function atm ( ) {
             type: 'number',
             name: 'benfAccNo',
             message: 'Please enter benificiary account number',
+            validate(value){
+                if(Number(value)){
+                    return true
+                }else{
+                    return 'please enter a valid account number'
+                }
+            },
             when(answers){
                 // console.clear()
                 return answers.transferType;
@@ -134,6 +141,8 @@ async function atm ( ) {
     }else if(answer.benAmount <= balance) {
         balance -= Number(answer.benAmount)
         console.log( `Your new balance is: ${balance}` )
+    }else{
+        console.log('You have insufficient balance')
     }
 }
 
